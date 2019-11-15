@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var numberCollection_1 = require("./components/numberCollection");
+var characterCollection_1 = require("./components/characterCollection");
+var collection = new numberCollection_1.NumbersCollection([11, 0, -1, 7, 6, 11, 10, 6, -3, 9]);
+collection.sort();
+console.log(collection.data);
+var str = new characterCollection_1.CharacterCollection("vishnu");
+str.sort();
+console.log(str.data);
+var str2 = new characterCollection_1.CharacterCollection("ayaan");
+str2.sort();
+console.log(str2.data);

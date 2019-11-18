@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var file_readers_1 = require("./file_readers");
+var MatchReader_1 = require("./MatchReader");
+var Win_1 = require("./analysers/Win");
+var console_1 = require("./report/console");
+var summary_1 = require("./MatchReader/summary");
+var cvsDataReader = new file_readers_1.CSVReader("./football.csv");
+var matchReader = new MatchReader_1.MatchReader(cvsDataReader);
+matchReader.load();
+var newSummary = new summary_1.MatchSummary(new Win_1.TotalWin("Man United"), new console_1.ConsoleReport());
+newSummary.buildAndReport(matchReader.matches);
